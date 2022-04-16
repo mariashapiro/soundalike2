@@ -1,8 +1,14 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import {
+  Routes,
+  Route,
+  BrowserRouter
+} from 'react-router-dom';
 
 import LandingPage from './pages/LandingPage';
+import InputPage from './pages/InputPage';
 
 function App() {
   //const [getMessage, setGetMessage] = useState({})
@@ -17,7 +23,14 @@ function App() {
 
   }, [])
   return (
-    <LandingPage />
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<LandingPage />} />
+        <Route path="/begin" element={<InputPage />} />
+      </Routes>
+    </BrowserRouter>
+    
+    
   );
 }
 

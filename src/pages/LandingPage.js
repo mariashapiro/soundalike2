@@ -1,5 +1,6 @@
 import '../App.css';
 import { Button } from 'antd';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
     return (
@@ -9,9 +10,11 @@ const LandingPage = () => {
                     Soundalike recommends songs using the Million Song Challenge Dataset. It uses a recommender
                     system to create a curated playlist for any user. 
                 </p>
-            <Button type="primary">Begin</Button>
+            <Button type="primary">
+                <Link to="/begin">Begin</Link>
+            </Button>
         </div>
     )
-}
+};
 
 export default LandingPage;
