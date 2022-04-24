@@ -1,14 +1,12 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
-import {
-  Routes,
-  Route,
-  BrowserRouter
-} from 'react-router-dom';
+
 
 import LandingPage from './pages/LandingPage';
 import InputPage from './pages/InputPage';
+import SmoothScroll from './components/SmoothScroll/SmoothScroll';
+
 
 function App() {
   //const [getMessage, setGetMessage] = useState({})
@@ -23,14 +21,10 @@ function App() {
 
   }, [])
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<LandingPage />} />
-        <Route path="/begin" element={<InputPage />} />
-      </Routes>
-    </BrowserRouter>
-    
-    
+    <SmoothScroll>
+      <LandingPage flexDirection="row"/>
+      <InputPage flexDirection="row-reverse" />
+    </SmoothScroll>
   );
 }
 
