@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const InputPage = () => {
     const { Search } = Input;
-    const DEPLOYED_URL = 'https://soundalike2.vercel.app/flask/search';
+    const DEPLOYED_URL = 'https://soundalike2.vercel.app/flask/search'; //use when deploying
     const DEV_URL = 'http://127.0.0.1:5000/flask/search';
 
     const onSearch = (value) => {
