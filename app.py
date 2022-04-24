@@ -9,7 +9,6 @@ cors = CORS(app) #comment this on deployment
 app.config['CORS_HEADERS'] = 'Content-Type'
 api = Api(app)
 
-
 @app.route("/", defaults={'path':''})
 @cross_origin()
 def serve(path):
