@@ -1,10 +1,23 @@
-import { Input, Button } from 'antd';
+import { Input } from 'antd';
+import axios from 'axios'
 
 const InputPage = ({ flexDirection }) => {
     const { Search } = Input;
+    const DEPLOYED_URL = 'https://soundalike2.vercel.app/flask/search'; //use when deploying
+    const DEV_URL = 'http://127.0.0.1:5000/flask/search';
+
     const onSearch = (value) => {
-        console.log(value);
-    }
+        axios.post(DEV_URL, {
+            song_title: value
+        }, {
+    
+        }).then(response => {
+            console.log('success', response)
+        }).catch(error => {
+            console.log('error', error)
+        });
+
+    };
 
     return (
         <div >

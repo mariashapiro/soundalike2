@@ -12,7 +12,7 @@ function App() {
   //const [getMessage, setGetMessage] = useState({})
 
   useEffect(()=>{
-    axios.get('https:/soundalike2.vercel.app/flask/hello').then(response => {
+    axios.get('https://soundalike2.vercel.app/flask/hello').then(response => {
       console.log("SUCCESS", response)
       //setGetMessage(response)
     }).catch(error => {
