@@ -1,6 +1,6 @@
 # Soundalike
 
-Final project for Spring 2022 CS4675. Takes inspiration from the Million Song Dataset Challenge to make a song recommedation system using collaborative filtering. 
+Final project for Spring 2022 CS4675. Takes inspiration from the Million Song Dataset Challenge to make a song recommedation system using collaborative filtering. The workshop presentation is included (as Soundalike Presentation.pdf) in the repo for convenience. 
 
 ## Website
 
