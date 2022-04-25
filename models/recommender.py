@@ -61,7 +61,7 @@ class Recommender:
             utils.pickle_dump(self.model, model_fname)
 
         song_idx = song_map[song_id]
-        sim_songs = self.model.similar_items(song_idx, N=(k+1), item_users=listen_mat)
+        sim_songs = self.model.similar_items(song_idx, N=(k+1))
         rec_inds = sim_songs[0][1:k+1]
         rec_scores = sim_songs[1][1:k+1]
         
@@ -75,7 +75,7 @@ class Recommender:
 
 
 def main():
-    rec = Recommender(type='cos', load=True)
+    rec = Recommender(type='lfm', load=True)
     print(rec.song_titles[rec.song_titles['song_id'] == 'SOBNXNE12AB0187B37']['song_title'].iloc[0])
     print(rec.recommend('SOBNXNE12AB0187B37', k=5))
 
