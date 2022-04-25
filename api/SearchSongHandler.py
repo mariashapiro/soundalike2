@@ -29,8 +29,8 @@ class SearchSongHandler(Resource):
     if not song_title_value:
       status = "Unsuccessful"
     
-    get_recommended_songs_from_model(song_title_value)
-    return jsonify({"status": status, "song_title": song_title_value})
+    rec_songs = get_recommended_songs_from_model(song_title_value)
+    return jsonify({"status": status, "rec_songs": rec_songs})
   
   def options(self):
     return build_cors_preflight_response()
@@ -43,14 +43,22 @@ def build_cors_preflight_response():
   return response
 
 def get_recommended_songs_from_model(song_title):
-  pathh = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'models/data/unique_tracks.pkl'))
-  unique_songs_file = pickle.load(open(pathh, 'rb'))
-  # song_titles_df = pd.read_csv(
-  #   fname, sep='<SEP>',
-  #   names=['track_id', 'song_id', 'artist', 'song_title'],
-  #   engine='python'
-  #   )[['song_id', 'song_title']]
-  # song_match = song_titles_df[song_titles_df['song_title'] == song_title]['song_id'].tolist()[0]
-  # print('song_match', song_match)
+  PATH = os.path.abspath(os.path.join(os.path.dirname( __file__ ), '..', 'models/data'))
+  unique_songs_file = pickle.load(open(PATH + "/unique_tracks.pkl", 'rb'))
+  song_id_matches = unique_songs_file[unique_songs_file['song_title'] == song_title]['song_id'].tolist()
+  
+  rec_songs = []
+  song_id = None
+  if song_id_matches:
+    song_id = song_id_matches
+  else:
+    print("no song found. please try again")
+    return rec_songs
+
+  model = pickle.load(open(PATH + "/lfm_model.pkl", 'rb'))
+  rec_songs = model.recommend(song_id)
+  print(rec_songs)
+  return rec_songs
+  
 
   

@@ -5,7 +5,8 @@ const InputPage = ({ flexDirection }) => {
     const { Search } = Input;
     const DEPLOYED_URL = 'https://soundalike2.vercel.app/flask/search'; //use when deploying
     const DEV_URL = 'http://127.0.0.1:5000/flask/search';
-
+    
+    let rec_songs = ['a', 'b', 'c'];
     const onSearch = (value) => {
         axios.post(DEV_URL, {
             song_title: value
@@ -13,6 +14,7 @@ const InputPage = ({ flexDirection }) => {
     
         }).then(response => {
             console.log('success', response)
+            rec_songs = response.body.rec_songs; //might need to be modified
         }).catch(error => {
             console.log('error', error)
         });
@@ -31,6 +33,12 @@ const InputPage = ({ flexDirection }) => {
                         size="large"
                         onSearch={onSearch}
                     />
+                    <h2>Recommended Songs</h2>
+                    <u1>
+                        {rec_songs.map(function(item) {
+                            return <li key={item}>{item}</li>
+                        })}
+                    </u1>
                 </div>
 
             </div>
