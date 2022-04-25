@@ -2,9 +2,15 @@
 
 Final project for Spring 2022 CS4675. Takes inspiration from the Million Song Dataset Challenge to make a song recommedation system using collaborative filtering. The workshop presentation is included (as Soundalike Presentation.pdf) in the repo for convenience. 
 
-## Website
+## Running Instructions
 
-Link: [https://soundalike2.vercel.app/](https://soundalike2.vercel.app/)
+1.	Activate the virtual environment
+  * Unix: `./venv/bin/activate`
+  * Windows: `./venv/Scripts/activate`
+2.	In a terminal type `npm run start`
+3.	In another terminal type `python -m flask run` to start the server
+
+
 
 ## Available Scripts
 
