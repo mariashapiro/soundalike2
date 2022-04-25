@@ -36,20 +36,16 @@ class Recommender:
                 )
 
     def recommend(self, song_id, k=5):
-        print('Start recommendations...')
-        listen_mat = utils.create_listen_matrix()
-
-        print('Find unique songs...')
-        if self.load and os.path.isfile('data/unique_songs.pkl'):
-            songs_uniq = utils.pickle_load('data/unique_songs.pkl')
-        else:
-            songs_uniq = np.unique(self.songs)
-            utils.pickle_dump(songs_uniq, 'data/unique_songs.pkl')
-
         print('Map songs to index...')
         if self.load and os.path.isfile('data/song_map.pkl'):
             song_map = utils.pickle_load('data/song_map.pkl')
         else:
+            if self.load and os.path.isfile('data/unique_songs.pkl'):
+                songs_uniq = utils.pickle_load('data/unique_songs.pkl')
+            else:
+                songs_uniq = np.unique(self.songs)
+                utils.pickle_dump(songs_uniq, 'data/unique_songs.pkl')
+
             song_map = {k: v for v, k in enumerate(songs_uniq)}
             utils.pickle_dump(song_map, 'data/song_map.pkl')
 
@@ -57,6 +53,7 @@ class Recommender:
         if self.load and os.path.isfile(model_fname):
             self.model = utils.pickle_load(model_fname)
         else:
+            listen_mat = utils.create_listen_matrix()
             self.model.fit(listen_mat)
             utils.pickle_dump(self.model, model_fname)
 
