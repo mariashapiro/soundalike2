@@ -31,7 +31,7 @@ def load_triplets(load=True):
     if load and os.path.isfile('data/train_users.pkl') and os.path.isfile('data/train_songs.pkl') and os.path.isfile('data/train_listens.pkl'):
         return pickle_load('data/train_users.pkl'), pickle_load('data/train_songs.pkl'), pickle_load('data/train_listens.pkl')
 
-    triplets_df = pd.read_csv(fname, sep='\t', names=['user_id', 'song_id', 'listens'])
+    triplets_df = pd.read_csv("fname", sep='\t', names=['user_id', 'song_id', 'listens'])
 
     users = triplets_df['user_id'].astype(str).to_numpy()
     pickle_dump(users, 'data/train_users.pkl')
