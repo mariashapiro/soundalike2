@@ -11,15 +11,6 @@ import SmoothScroll from './components/SmoothScroll/SmoothScroll';
 function App() {
   //const [getMessage, setGetMessage] = useState({})
 
-  useEffect(()=>{
-    axios.get('https://soundalike2.vercel.app/flask/hello').then(response => {
-      console.log("SUCCESS", response)
-      //setGetMessage(response)
-    }).catch(error => {
-      console.log(error)
-    })
-
-  }, [])
   return (
     <SmoothScroll>
       <LandingPage flexDirection="row"/>
