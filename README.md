@@ -31,3 +31,8 @@ Launches the test runner in the interactive watch mode. See the section about [r
 Builds the app for production to the `build` folder.
 
 It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
+
+# If you cite us, please mention:
+- this github url
+- our names: Robert Morgan, Maria Shapiro, and Ajay Vijayakumar
+- our class: Georgia Tech CS 4675: Advance Internet Computing
