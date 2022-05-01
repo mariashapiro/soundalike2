@@ -1,14 +1,16 @@
-# Create React App
+# Soundalike
 
-This directory is a brief example of a [Create React App](https://github.com/facebook/create-react-app) site that can be deployed to Vercel with zero configuration.
+Final project for Spring 2022 CS4675. Takes inspiration from the Million Song Dataset Challenge to make a song recommedation system using collaborative filtering. The workshop presentation is included (as Soundalike Presentation.pdf) in the repo for convenience. 
 
-## Deploy Your Own
+## Running Instructions
 
-Deploy your own Create React App project with Vercel.
+1.	Activate the virtual environment
+  * Unix: `./venv/bin/activate`
+  * Windows: `./venv/Scripts/activate`
+2.	In a terminal type `npm run start`
+3.	In another terminal type `python -m flask run` to start the server
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/create-react-app&template=create-react-app)
 
-_Live Example: https://create-react-template.vercel.app/_
 
 ## Available Scripts
 
@@ -29,3 +31,8 @@ Launches the test runner in the interactive watch mode. See the section about [r
 Builds the app for production to the `build` folder.
 
 It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
+
+# If you cite us, please mention:
+- this github url
+- our names: Robert Morgan, Maria Shapiro, and Ajay Vijayakumar
+- our class: Georgia Tech CS 4675: Advance Internet Computing
