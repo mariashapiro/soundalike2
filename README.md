@@ -1,16 +1,23 @@
 # Soundalike
 
-Final project for Spring 2022 CS4675. Takes inspiration from the Million Song Dataset Challenge to make a song recommedation system using collaborative filtering. The workshop presentation is included (as Soundalike Presentation.pdf) in the repo for convenience. 
+Final project for Spring 2022 CS 4675 (Advance Internet Computing) taught by Dr. Ling Liu. We use user listening histories from the Million Song Dataset Challenge to make a song recommedation system using collaborative filtering. The workshop and final presentations are included for convenience. 
 
-## Running Instructions
+## Run Instructions
 
 1.	Activate the virtual environment
   * Unix: `./venv/bin/activate`
-  * Windows: `./venv/Scripts/activate`
-2.	In a terminal type `npm run start`
-3.	In another terminal type `python -m flask run` to start the server
+  * Windows (on Git Bash terminal): `./venv/Scripts/activate.bat`
+2.  Install dependencies `npm install`
+3.	In a terminal type `npm run start`
+4.	In another terminal type `python -m flask run` to start the server
 
-
+## Python Dependencies
+Install with pip (tested with Python 3.9):
+- flask (flask_restful, flask_cors)
+- numpy
+- pandas
+- scipy
+- implicit
 
 ## Available Scripts
 

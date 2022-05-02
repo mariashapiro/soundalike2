@@ -1,3 +1,5 @@
+import os
+import numpy as np
 import implicit
 
 import utils
@@ -72,7 +74,8 @@ class Recommender:
 
 
 def main():
-    rec = Recommender(type='lfm', load=True)
+    als_params = {'factors': 150, 'iterations': 10, 'regularization': 0.1}
+    rec = Recommender(type='als', params=als_params, load=False)
     print(rec.song_titles[rec.song_titles['song_id'] == 'SOBNXNE12AB0187B37']['song_title'].iloc[0])
     print(rec.recommend('SOBNXNE12AB0187B37', k=5))
 
